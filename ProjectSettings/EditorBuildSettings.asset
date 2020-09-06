@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ballGame_0.unity
+    path: Assets/BallGame/Scenes/ballGame_0.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/ballGame_1.unity
+    path: Assets/BallGame/Scenes/ballGame_1.unity
     guid: ea73107a47971394f99fde716fb473b5
   - enabled: 1
-    path: Assets/Scenes/ballGame_2.unity
+    path: Assets/BallGame/Scenes/ballGame_2.unity
     guid: 02221ed2ccc962e49bd6b7967cbcb3ce
   m_configObjects: {}
