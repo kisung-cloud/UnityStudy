@@ -22,6 +22,7 @@ public class playerCtrl : MonoBehaviour
 
     //접근해야 하는 컴포넌트는 반드시 변수에 할당한 후 사용
     private Transform tr;
+
     //이동 속도 변수(public으로 선언되어 Inspector에 노출됨)
     public float moveSpeed = 10.0f;
     //회전 속도 변수
@@ -53,6 +54,9 @@ public class playerCtrl : MonoBehaviour
         v = Input.GetAxis("Vertical");
         r = Input.GetAxis("Mouse X");
 
+        Debug.Log("h=" + h.ToString());
+        Debug.Log("v=" + v.ToString());
+
         //전후좌우 이동 방향 벡터 계산
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
 
@@ -62,7 +66,26 @@ public class playerCtrl : MonoBehaviour
         //Vector3.up 축을 기준으로 rotSpeed만큼의 속도로 회전
         tr.Rotate(Vector3.up * rotSpeed * Time.deltaTime * r);
 
-        Debug.Log("h=" + h.ToString());
-        Debug.Log("v=" + v.ToString());
+        //키보드 입력값을 기준으로 동작할 애니메이션 수행
+        if (v >= 0.1f)
+        {
+            anim.CrossFade(playerAnim.runF.name, 0.3f); //전진 애니메이션
+        }
+        else if(v <= -0.1f)
+        {
+            anim.CrossFade(playerAnim.runB.name, 0.3f); //후진 애니메이션
+        }
+        else if(h >= 0.1f)
+        {
+            anim.CrossFade(playerAnim.runR.name, 0.3f); //오른쪽 이동 애니메이션
+        }
+        else if(h <= -0.1f)
+        {
+            anim.CrossFade(playerAnim.runL.name, 0.3f); //왼쪽 이동 애니메이션
+        }
+        else
+        {
+            anim.CrossFade(playerAnim.idle.name, 0.3f); //정지 시 Idle 애니메이션
+        }
     }
 }

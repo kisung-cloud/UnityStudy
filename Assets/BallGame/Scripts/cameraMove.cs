@@ -9,6 +9,7 @@ public class cameraMove : MonoBehaviour
 
     void Start()
     {
+        //따라다닐 물체의 Tag이름
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         offset = transform.position - playerTransform.position; 
     }
