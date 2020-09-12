@@ -8,6 +8,7 @@ TagManager:
   - floor
   - finish
   - BULLET
+  - PLAYER
   layers:
   - Default
   - TransparentFX
