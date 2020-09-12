@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6275573581698259615}
   - component: {fileID: 6275573581698259614}
-  - component: {fileID: 6275573581698259612}
   - component: {fileID: 2165321763832111039}
   - component: {fileID: 3560502015528113720}
   - component: {fileID: -2723262424510227855}
-  m_Layer: 9
-  m_Name: Bullet
+  - component: {fileID: -3307760989061817075}
+  m_Layer: 10
+  m_Name: E_Bullet
   m_TagString: BULLET
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,20 +52,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6275573581698259612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6275573581698259585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364a6c0ddc0cdbd4a85741080924fef1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
-  speed: 1000
 --- !u!135 &2165321763832111039
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -74,7 +60,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6275573581698259585}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
@@ -299,6 +285,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!75 &-3307760989061817075
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6275573581698259585}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 100}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!1001 &6275573581135053433
 PrefabInstance:
   m_ObjectHideFlags: 0
