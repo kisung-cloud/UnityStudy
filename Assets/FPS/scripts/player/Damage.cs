@@ -57,7 +57,7 @@ public class Damage : MonoBehaviour
             }
         }
     }
-
+    
     IEnumerator ShowBloodScreen()
     {
         //BloodScreen 텍스처의 알파값을 불규칙하게 변경
@@ -71,6 +71,7 @@ public class Damage : MonoBehaviour
     void PlayerDie()
     {
         OnPlayerDie();
+        GameManager.instance.isGameOver = true;
         //Debug.Log("PlayerDie !");
         ////"ENEMY" 태그로 지정된 모든 적 캐릭터를 추출해 배열에 저장
         //GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);

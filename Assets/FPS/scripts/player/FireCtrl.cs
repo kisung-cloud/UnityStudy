@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 //총알 발사와 재장전 오디오 클립을 저장할 구조체
 [System.Serializable]
@@ -54,6 +55,11 @@ public class FireCtrl : MonoBehaviour
     //재장전 여부를 판단할 변수
     private bool isReloading = false;
 
+    //변경할 무기 이미지
+    public Sprite[] weaponIcons;
+    //교체할 무기 이미지 UI
+    public Image weaponImage;
+
     void Start()
     {
         //FirePos 하위에 있는 컴포넌트 추출
@@ -66,6 +72,8 @@ public class FireCtrl : MonoBehaviour
 
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         //마우스 왼쪽 버튼을 클릭했을 때 Fire 함수 호출
         if(!isReloading && Input.GetMouseButtonDown(0))
         {
@@ -85,8 +93,16 @@ public class FireCtrl : MonoBehaviour
     {
         //셰이크 효과 호출
         StartCoroutine(shake.ShakeCamera(0.1f, 0.2f, 0.5f));
+
         //Bullet 프리팹을 동적으로 생성
-        Instantiate(bullet, firePos.position, firePos.rotation);
+        //Instantiate(bullet, firePos.position, firePos.rotation);
+        var _bullet = GameManager.instance.GetBullet();
+        if (_bullet != null)
+        {
+            _bullet.transform.position = firePos.position;
+            _bullet.transform.rotation = firePos.rotation;
+            _bullet.SetActive(true);
+        }
         //파티클 실행
         cartridge.Play();
         //총구 화염 파티클 실행
@@ -127,5 +143,11 @@ public class FireCtrl : MonoBehaviour
     {
         //남은 총알 수 / 최대 총알 수) 표시
         magazineText.text = string.Format("<color=#ff0000>{0}</color>/{1}", remainingBullet, maxBullet);
+    }
+
+    public void OnChangeWeapon()
+    {
+        currWeapon = (WeaponType)((int)++currWeapon % 2);
+        weaponImage.sprite = weaponIcons[(int)currWeapon];
     }
 }

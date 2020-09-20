@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 4ab6bd7141aa97d4f96f6e4d5f11af44
+guid: 515f046628cd7cf4b95ee167b90c5b06
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - hpBarPrefab: {fileID: 2219328340168007207, guid: c4470087d7253fa46b2d19ffb4c9c3d5,
-      type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
