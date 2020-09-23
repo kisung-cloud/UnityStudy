@@ -71,6 +71,7 @@ public class EnemyDamage : MonoBehaviour
                 //GameManager.instance.IncKillCount();
                 ////Capule Collider 컴포넌트를 비활성화
                 //GetComponent<CapsuleCollider>().enabled = false;
+                
             }
         }
     }

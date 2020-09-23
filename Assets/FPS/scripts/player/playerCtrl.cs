@@ -34,6 +34,16 @@ public class playerCtrl : MonoBehaviour
     [System.NonSerialized] //private와 같은역할
     public Animation anim;
 
+    void OnEnable()
+    {
+        GameManager.OnItemChange += UpdateSetup;
+    }
+
+    void UpdateSetup()
+    {
+        moveSpeed = GameManager.instance.gameData.speed;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
