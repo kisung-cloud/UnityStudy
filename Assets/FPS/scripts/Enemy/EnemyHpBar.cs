@@ -26,7 +26,7 @@ public class EnemyHpBar : MonoBehaviour
         rectParent = canvas.GetComponent<RectTransform>();
         rectHp = this.gameObject.GetComponent<RectTransform>();
     }
-
+    
     void LateUpdate()
     {
         //월드 좌표를 스크린의 좌표로 변환

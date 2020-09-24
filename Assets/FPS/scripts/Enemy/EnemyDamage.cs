@@ -67,11 +67,10 @@ public class EnemyDamage : MonoBehaviour
                 GetComponent<EnemyAI>().state = EnemyAI.State.DIE;
                 //적 캐릭터가 사망한 이후 생명 게이지를 투명 처리
                 hpBarImage.GetComponentsInParent<Image>()[1].color = Color.clear;
-                ////적 캐릭터의 사망 횟수를 누적시키는 함수 호출
-                //GameManager.instance.IncKillCount();
-                ////Capule Collider 컴포넌트를 비활성화
-                //GetComponent<CapsuleCollider>().enabled = false;
-                
+                //적 캐릭터의 사망 횟수를 누적시키는 함수 호출
+                GameManager.instance.IncKillCount();
+                //Capule Collider 컴포넌트를 비활성화
+                GetComponent<CapsuleCollider>().enabled = false;
             }
         }
     }

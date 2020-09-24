@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameDataSO
   m_EditorClassIdentifier: 
   killCount: 0
-  hp: 100
+  hp: 90
   damage: 25
   speed: 6.6
   equipItem:
@@ -27,11 +27,6 @@ MonoBehaviour:
     name: Damage Up
     desc: Increase 5% Damage
     value: 0.05
-  - itemType: 2
-    itemCalc: 0
-    name: Grenade Up
-    desc: Increase +2 Grenade
-    value: 2
   - itemType: 0
     itemCalc: 0
     name: HP Up

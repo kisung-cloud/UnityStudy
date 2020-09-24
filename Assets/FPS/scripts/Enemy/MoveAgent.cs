@@ -135,7 +135,7 @@ public class MoveAgent : MonoBehaviour
 
         //순찰 모드가 아닐 경우 이후 로직을 수행하지 않음
         if (!_patrolling) return;
-         
+        
         //NavMeshAgent가 이동하고 있고 목적지에 도착했는지 여부를 계산
         if(agent.velocity.sqrMagnitude >= 0.2f * 0.2f && agent.remainingDistance <= 0.5f)
         {

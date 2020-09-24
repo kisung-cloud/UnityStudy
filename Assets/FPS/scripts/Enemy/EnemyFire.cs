@@ -17,7 +17,7 @@ public class EnemyFire : MonoBehaviour
     private readonly int hashfire = Animator.StringToHash("Fire");
     //애니메이터 컨트롤러에 정의한 파라미터의 해시값을 미리 추출
     private readonly int hashReload = Animator.StringToHash("Reload");
-
+    
     //다음 발사할 시간 계산용 변수
     private float nextFire = 0.0f;
     //총알 발사 간격

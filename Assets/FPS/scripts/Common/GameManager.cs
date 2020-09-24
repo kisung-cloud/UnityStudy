@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     public int maxPool = 10;
     public List<GameObject> bulletPool = new List<GameObject>();
 
+    public int daf = 10;
     void Awake()
     {
         if(instance == null)

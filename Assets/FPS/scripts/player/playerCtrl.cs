@@ -55,6 +55,9 @@ public class playerCtrl : MonoBehaviour
         //animation 컴포넌트의 애니메이션 클립을 지정하고 실행
         anim.clip = playerAnim.idle;
         anim.Play();
+
+        //불러온 데이터 값을 moveSpeed에 적용
+        moveSpeed = GameManager.instance.gameData.speed;
     }
 
     // Update is called once per frame
